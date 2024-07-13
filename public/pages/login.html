@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <h1 class="site-name">Jess Website</h1>
+        <ul class="nav-links">
+            <li><a href="#" class="selec-link">Accueil</a></li>
+            <li><a href="#offer-section">Galerie</a></li>
+            <li><a href="#acheter">Acheter</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+    
+    <div class="content">
+        <div class="login-container">
+            <h3 class="login-title">Se connecter</h3>
+            <form id="login-form">
+              <div class="input-group">
+                <label>Nom d'utilisateur</label>
+                <input type="username" id="username" required>
+              </div>
+              <div class="input-group">
+                <label>Mot de passe</label>
+                <input type="password" id="password" required>
+              </div>
+
+              <button type="submit" class="login-button">Se connecter</button>
+              <div class="divider">Ou</div>
+              <button type="button" class="login-button" onclick="window.location.href='register'">Créer un compte</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/login.js"></script>
+</body>
+</html>

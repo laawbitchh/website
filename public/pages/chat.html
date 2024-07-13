@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Layout</title>
+    <link rel="stylesheet" href="../css/chat.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="header">
+            <div>
+                <p>Jess Chat Room</p>
+            </div>
+        </div>
+        <div class="chat">
+            <img src="../src/pdp-jess.jpg">
+            <div class="details">
+                <div class="name">Jessica</div>
+                <div class="last-message">Viens me parler</div>
+            </div>
+
+        </div>
+
+        
+       
+       
+    </div>
+    <div class="content">
+        <div class="top-bar">
+            <img src="../src/pdp-jess.jpg" alt="Avatar" class="profile-pic">
+            <div class="profile-details">
+                <div class="name">Jessica</div>
+                <div class="status">
+                    <span class="status-indicator" id="status-indicator"></span><span id="status-text">Hors ligne</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="inner-content">
+            <div class="message-area" id="message-area">
+                <!-- Les messages seront ajoutés ici dynamiquement -->
+            </div>
+            <div class="message-input">
+                <input type="text" id="message-input" placeholder="Message...">
+                <button id="send-button"><img src="../src/send.png" alt="Send"></button>
+            </div>
+        </div>
+        
+        <!-- Content area -->
+    </div>
+
+    <script src="../js/chat.js"></script>
+</body>
+</html>

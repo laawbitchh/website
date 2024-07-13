@@ -1,0 +1,270 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.sidebar {
+    width: 350px;
+    background-color: #1a1a1a;
+    color: #fff;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.sidebar .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 1px #7a7a7a solid;
+}
+
+.sidebar .chat {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #505050;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.sidebar .chat img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.sidebar .chat .details {
+    flex-grow: 1;
+}
+
+.sidebar .chat .details .name {
+    font-weight: bold;
+}
+
+.sidebar .chat .details .last-message {
+    color: #aaa;
+}
+
+.content {
+    flex-grow: 1;
+    background-color: #070707;
+    padding: 20px;
+    position: relative;
+    height: 100vh;
+    overflow: hidden; 
+    border-left: 1px #7a7a7a solid;
+}
+
+.content .top-bar {
+    background-color: #1a1a1a;
+    height: 75px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.content .top-bar .profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.content .top-bar .profile-details {
+    color: #fff;
+}
+
+.content .top-bar .profile-details .name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.content .top-bar .profile-details .status {
+    display: flex;
+    align-items: center;
+    color: #aaa;
+}
+
+.content .top-bar .profile-details .status .status-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #ff0000;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.inner-content {
+    margin-top: 115px; /* Ajustement de la marge supérieure pour décaler la inner-content sous la top-bar */
+    height: calc(100% - 115px); /* Calculer la hauteur en fonction de l'écran moins la top-bar */
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message-area {
+    overflow-y: auto;
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column-reverse; /* Inversez l'ordre des messages */
+}
+
+.message-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px; /* Ajout de padding pour un meilleur espacement */
+}
+
+.message-input input[type="text"] {
+    background-color: #1a1a1a;
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #1a1a1a;
+    color: #ccc;
+    font-size: 14px;
+    border-radius: 20px 0px 0px 20px; /* Ajustement du border-radius pour correspondre au design */
+    outline: none;
+}
+
+.message-input button {
+    background-color: #1a1a1a;
+    border: none;
+    color: #fff;
+    padding: 15px;
+    border-radius: 0px 50% 50% 0px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transition pour un effet de survol plus doux */
+}
+
+.message-input button img {
+    width: 20px;
+    height: auto;
+    vertical-align: middle;
+}
+
+/* Styles supplémentaires pour scrollbar personnalisée */
+.message-area::-webkit-scrollbar {
+    width: 8px;
+}
+
+.message-area::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+
+.message-area::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+.message-area::-webkit-scrollbar-thumb:hover {
+    background-color: #000000;
+}
+
+.message {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.message .bubble {
+    font-size: 16px;
+    padding: 15px;
+    max-width: 70%; /* Limitez la largeur maximale si nécessaire */
+    overflow-wrap: break-word; /* Gestion du débordement du texte */
+    white-space: pre-wrap;
+    color: #f1f1f1;
+    word-break: break-word; /* Gestion du saut de mot pour les mots longs */
+}
+
+.message.left {
+    justify-content: flex-start;
+    margin-right: auto;
+}
+
+.message.left .bubble {
+    background-color: #da119b;
+    border-radius: 10px 10px 10px 0;
+    margin-left: 50px; /* Ajustez la marge gauche pour la photo de profil */
+    max-width: 90%; /* Limitez la largeur maximale à 90% pour les messages longs */
+}
+
+.message.left .profile-pic {
+    margin-right: 10px;
+    align-self: flex-end; /* Aligner la photo de profil en bas à droite */
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.message.right {
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.message.right .bubble {
+    background-color: #1a1a1a;
+    border-radius: 10px 10px 0 10px;
+    margin-right: 50px;
+    max-width: 90%; /* Limitez la largeur maximale à 90% pour les messages longs */
+}
+
+.message.right .profile-pic {
+    margin-left: 10px;
+    align-self: flex-end; /* Aligner la photo de profil en bas à droite */
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/* Media Query pour les petits écrans */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        display: none; /* Masquer la sidebar sur les petits écrans */
+    }
+
+    .content {
+        padding-left: 20px; /* Ajuster le padding à gauche pour le contenu principal */
+    }
+
+    .inner-content {
+        margin: 90px 0; /* Ajuster la marge pour le contenu principal */
+        height: calc(100% - 90px); /* Calculer la hauteur en fonction de l'écran */
+    }
+
+    .message.left .bubble,
+    .message.right .bubble {
+        max-width: 90%; /* Réduire la largeur maximale des bulles sur les petits écrans */
+    }
+
+    .message-input input[type="text"] {
+        padding: 12px; /* Ajuster le padding du champ de saisie pour une meilleure lisibilité */
+    }
+
+    .message-input button {
+        padding: 12px; /* Ajuster la taille des boutons d'envoi sur les petits écrans */
+    }
+}
